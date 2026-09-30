@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ContentForge AI - Content Generator Studio | Week 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo"><div class="logo-icon">◧</div><span>ContentForge AI</span></div>
+      <div class="nav-right"><span class="badge">Week 2 • AI for Content Creation</span><a class="btn-dark" href="#library">Portfolio Ready</a></div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="pill"><span class="dot"></span> Prompt Optimization • AI Generation • Automation • Individual Project</div>
+    <h1><span class="grad">AI Content Studio</span><br>for Creators & Developers</h1>
+    <p>Tool that generates blogs, emails, code docs & social threads. Includes prompt library, content structuring using AI & automation concepts — IBM + Google Cloud.</p>
+    <div class="stats"><span><b>4</b> Generators</span><span><b>8</b> Prompts V1→V3</span><span><b>100%</b> No API Keys</span></div>
+  </header>
+
+  <main class="container">
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-type="blog">📝 Blog Post</button>
+      <button class="tab" data-type="email">✉️ Email & Proposal</button>
+      <button class="tab" data-type="code">💻 Code Docs</button>
+      <button class="tab" data-type="social">⚡ Social Thread</button>
+    </div>
+
+    <div class="grid">
+      <div class="card form-card">
+        <h3>Input • Prompt Iteration</h3>
+        <label>Topic / Keyword</label>
+        <input id="topic" value="Building AI Agents with LangChain">
+        <div class="row">
+          <div><label>Audience</label><input id="audience" value="Indie hackers & early-stage founders"></div>
+          <div><label>Tone</label><select id="tone"><option>Confident & Tactical</option><option>Friendly & Clear</option><option>Bold & Contrarian</option><option>Technical & Detailed</option></select></div>
+        </div>
+        <label>Keywords (SEO / Automation)</label>
+        <input id="keywords" value="AI agents, automation, LangChain, MVP" placeholder="e.g. SEO, productivity">
+        <button id="generate" class="btn-grad">✨ Generate Content</button>
+        <p class="hint">Runs locally • Markdown • No API needed</p>
+        <div class="workflow-mini"><h4>Automation Concept</h4><div class="steps"><span>Input</span>→<span>Prompt</span>→<span>Generate</span>→<span>Polish</span>→<span>Export</span></div></div>
+      </div>
+
+      <div class="card output-card">
+        <div class="output-head"><div class="o-title"><span class="live"></span> Output Preview <small id="meta">idle</small></div><div class="o-actions"><button id="copyBtn">Copy</button><button id="dlBtn" class="dark">Export .md</button></div></div>
+        <div id="output" class="output-body"><div class="empty"><div class="e-icon">✦</div><b>Ready to generate</b><p>Choose generator type, fill topic & audience, hit Generate. Clean markdown for portfolio upload.</p></div></div>
+      </div>
+    </div>
+
+    <section id="library" class="library">
+      <div class="lib-head"><div><h2>Prompt Library — 8 prompts with iteration</h2><p>Technique: Role, Few-Shot, Chain-of-Thought • Prompt optimization & refinement</p></div><span class="lib-badge">Click to expand V3</span></div>
+      <div class="prompt-grid" id="promptGrid"></div>
+    </section>
+
+    <section class="workflow">
+      <h2>Automation Workflow Visualizer</h2>
+      <p>Input → Prompt Engine → Generation Core → Polish Pass → Multi-Export</p>
+      <div class="wf-grid">
+        <div class="wf"><div class="wf-icon">◧</div><b>Input Capture</b><small>Topic, audience, tone, keywords parsed</small></div>
+        <div class="wf"><div class="wf-icon">💡</div><b>Prompt Engine</b><small>Role + few-shot + CoT fused</small></div>
+        <div class="wf"><div class="wf-icon">⚙️</div><b>Generation Core</b><small>Template synthesis with tone-lock</small></div>
+        <div class="wf"><div class="wf-icon">✨</div><b>Polish Pass</b><small>SEO, readability, CTA optimization</small></div>
+        <div class="wf"><div class="wf-icon">↗</div><b>Multi-Export</b><small>Markdown, clipboard, save</small></div>
+      </div>
+    </section>
+
+    <footer class="footer"><span>Built for Portfolio • ContentForge AI — White Edition • IBM Intro to AI + Google Generative AI</span><span>HTML • CSS • Vanilla JS • #FFFFFF</span></footer>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
