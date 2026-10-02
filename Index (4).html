@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ContentForge AI - Beautiful White Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+
+  <nav class="navbar"><div class="nav-inner">
+    <div class="logo"><div class="logo-icon">◧</div><span>ContentForge AI</span></div>
+    <div class="nav-right"><span class="badge">Week 2 • AI for Content Creation</span><a class="btn-dark" href="#library">Portfolio Ready</a></div>
+  </div></nav>
+
+  <header class="hero">
+    <div class="pill"><span class="dot"></span> Prompt Optimization • AI Generation • Automation • Individual Project</div>
+    <h1><span class="grad">AI Content Studio</span><br>for Creators & Developers</h1>
+    <p>Tool that generates blogs, emails, code docs & social threads. Includes prompt library, content structuring using AI & automation concepts — IBM + Google Cloud.</p>
+    <div class="stats"><span><b>5</b> Generators</span><span><b>8</b> Prompts V1→V3</span><span><b>100%</b> Responsive</span></div>
+  </header>
+
+  <main class="container">
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-type="blog">📝 Blog Post</button>
+      <button class="tab" data-type="email">✉️ Email & Proposal</button>
+      <button class="tab" data-type="code">💻 Code Docs</button>
+      <button class="tab" data-type="social">⚡ Social Thread</button>
+      <button class="tab" data-type="image">🎨 AI Image</button>
+    </div>
+
+    <div class="grid">
+      <!-- FORM - changes based on tab -->
+      <div class="card form-card" id="formCard">
+        <!-- Blog / Email / Social share same form -->
+        <div id="textForm">
+          <h3 id="formTitle">Input • Prompt Iteration</h3>
+          <label>Topic / Keyword</label>
+          <input id="topic" value="Building AI Agents with LangChain">
+          <div class="row"><div><label>Audience</label><input id="audience" value="Indie hackers & early-stage founders"></div><div><label>Tone</label><select id="tone"><option>Confident & Tactical</option><option>Friendly & Clear</option><option>Bold & Contrarian</option><option>Technical & Detailed</option></select></div></div>
+          <label>Keywords (SEO / Automation)</label><input id="keywords" value="AI agents, automation, LangChain, MVP">
+          <button id="generate" class="btn-grad">✨ Generate Content</button>
+          <p class="hint">AI-Generated Text • Runs locally • Markdown</p>
+        </div>
+
+        <!-- Code Form -->
+        <div id="codeForm" style="display:none">
+          <h3>AI-Generated Code • Prompt-to-Code</h3>
+          <label>Language</label><select id="codeLang"><option>JavaScript / TypeScript</option><option>Python</option><option>HTML + CSS</option><option>React</option><option>SQL</option></select>
+          <label>Task / Prompt</label><textarea id="codeTask">Create a responsive AI content generator function that takes topic, audience, tone and returns markdown blog with SEO tags</textarea>
+          <div class="row"><div><label>Output Type</label><select id="codeType"><option>Function / Component</option><option>Full README + Docs</option><option>API Endpoint</option></select></div><div><label>Level</label><select id="codeLevel"><option>Production Ready</option><option>Beginner Friendly</option></select></div></div>
+          <button id="genCode" class="btn-grad">💻 Generate Code</button>
+          <p class="hint">AI-Generated Code • Syntax Highlighted • Exportable</p>
+        </div>
+
+        <!-- Image Form -->
+        <div id="imageForm" style="display:none">
+          <h3>AI-Generated Images • Text-to-Image</h3>
+          <label>Image Prompt</label><textarea id="imgPrompt">Futuristic AI workspace for founders, soft studio light, minimal desk, neon gradient, 4k, cinematic, photorealistic</textarea>
+          <div class="row"><div><label>Style</label><select id="imgStyle"><option>Photorealistic</option><option>Cyberpunk</option><option>Minimal Line Art</option><option>3D Render</option><option>Watercolor</option></select></div><div><label>Aspect Ratio</label><select id="imgRatio"><option value="16:9" selected>16:9 Wide</option><option value="1:1">1:1 Square</option><option value="9:16">9:16 Portrait</option><option value="4:3">4:3</option></select></div></div>
+          <label>Negative Prompt</label><input id="imgNeg" placeholder="e.g. blurry, text, watermark">
+          <button id="genImg" class="btn-grad">🎨 Generate Image</button>
+          <p class="hint">Real AI Generation via Pollinations • No API Key • Downloadable PNG</p>
+          <div class="img-history"><h4>Recent Generations</h4><div id="imgHistory" class="history-grid"></div></div>
+        </div>
+
+        <div class="workflow-mini"><h4>Automation Concept</h4><div class="steps"><span>Input</span>→<span>Prompt</span>→<span>Generate</span>→<span>Polish</span>→<span>Export</span></div></div>
+      </div>
+
+      <!-- OUTPUT -->
+      <div class="card output-card" id="outputCard">
+        <div class="output-head"><div class="o-title"><span class="live"></span> <span id="outLabel">Output Preview</span> <small id="meta">idle</small></div><div class="o-actions"><button id="copyBtn">Copy</button><button id="dlBtn" class="dark">Export</button></div></div>
+        <div id="output" class="output-body"><div class="empty"><div class="e-icon">✦</div><b>Ready to generate</b><p>Choose Blog, Email, Code, Social or AI Image. This first nice design now has real AI Text, Image & Code generation.</p></div></div>
+      </div>
+    </div>
+
+    <section id="library" class="library">
+      <div class="lib-head"><div><h2>Prompt Library — 8 prompts with iteration</h2><p>Technique: Role, Few-Shot, Chain-of-Thought • Prompt optimization & refinement</p></div><span class="lib-badge">First Nice Edition • White #FFFFFF</span></div>
+      <div class="prompt-grid" id="promptGrid"></div>
+    </section>
+
+    <section class="workflow">
+      <h2>Automation Workflow Visualizer</h2><p>Input → Prompt Engine → Generation Core → Polish Pass → Multi-Export • No API</p>
+      <div class="wf-grid">
+        <div class="wf"><div class="wf-icon">◧</div><b>Input Capture</b><small>Topic, audience, tone, keywords parsed & normalized</small></div>
+        <div class="wf"><div class="wf-icon">💡</div><b>Prompt Engine</b><small>Role + few-shot + CoT fused into master prompt</small></div>
+        <div class="wf"><div class="wf-icon">⚙</div><b>Generation Core</b><small>AI-Generated Text / Image / Code synthesis</small></div>
+        <div class="wf"><div class="wf-icon">✨</div><b>Polish Pass</b><small>SEO, readability, CTA optimization</small></div>
+        <div class="wf"><div class="wf-icon">↗</div><b>Multi-Export</b><small>Markdown, PNG, JS • Clipboard, Save</small></div>
+      </div>
+    </section>
+
+    <footer class="footer"><span>Built for Portfolio • ContentForge AI — First Nice White Edition • IBM + Google Cloud</span><span>CAPACITI • HTML • CSS • JS • Fully Responsive</span></footer>
+  </main>
+<script src="Script.js"></script>
+</body>
+</html>
